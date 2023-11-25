@@ -115,6 +115,11 @@ class MainActivity : AppCompatActivity() {
 
         // Set the TextViews to the right values
         binding.revenue = revenue
+        if (savedInstanceState != null) {
+            revenue = savedInstanceState.getInt(KEY_REVENUE, 0)
+            dessertsSold = savedInstanceState.getInt(KEY_DESSERT_SOLD, 0)
+            showCurrentDessert()
+        }
         binding.amountSold = dessertsSold
 
         // Make sure the correct dessert is showing
