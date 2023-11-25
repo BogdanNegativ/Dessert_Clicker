@@ -27,6 +27,7 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import com.example.android.dessertclicker.databinding.ActivityMainBinding
 
+const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
 
     private var revenue = 0
@@ -60,6 +61,12 @@ class MainActivity : AppCompatActivity() {
             Dessert(R.drawable.nougat, 5000, 16000),
             Dessert(R.drawable.oreo, 6000, 20000)
     )
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart Called")
+    }
+
     private var currentDessert = allDesserts[0]
 
     override fun onCreate(savedInstanceState: Bundle?) {
