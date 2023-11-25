@@ -90,6 +90,11 @@ class MainActivity : AppCompatActivity() {
         super.onRestart()
         Log.d(TAG, "onRestart Called")
     }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        Log.d(TAG, "onSaveInstanceState Called")
+    }
 
     private var currentDessert = allDesserts[0]
 
