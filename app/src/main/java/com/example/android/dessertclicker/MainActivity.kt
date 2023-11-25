@@ -28,6 +28,8 @@ import androidx.databinding.DataBindingUtil
 import com.example.android.dessertclicker.databinding.ActivityMainBinding
 
 const val TAG = "MainActivity"
+const val KEY_REVENUE = "revenue_key"
+const val KEY_DESSERT_SOLD = "dessert_sold_key"
 class MainActivity : AppCompatActivity() {
 
     private var revenue = 0
@@ -94,6 +96,9 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
 
         Log.d(TAG, "onSaveInstanceState Called")
+
+        outState.putInt(KEY_REVENUE, revenue)
+        outState.putInt(KEY_DESSERT_SOLD, dessertsSold)
     }
 
     private var currentDessert = allDesserts[0]
